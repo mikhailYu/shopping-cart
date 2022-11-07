@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Routes, Router, Route } from "react-router-dom";
+import AboutPage from "./components/pages/aboutPage";
+import ShopPage from "./components/pages/shopPage";
+import HomePage from "./components/pages/homePage";
+import Nav from "./components/pages/nav";
+import Footer from "./components/pages/footer";
+import "./App.css";
+import { useEffect, useState } from "react";
+import CheckoutPage from "./components/pages/checkoutPage";
+import itemList from "./components/itemList";
+import CompletedPayment from "./components/pages/completedPayment";
 
-function App() {
+export default function App() {
+  const [itemCount, SetItemCount] = useState(0);
+  let subTotal = 0;
+
+  function addItem(itemID) {
+    itemList[itemID].Quantity++;
+    updateCartQuantity();
+  }
+
+  function updateCartQuantity() {
+    let totalItems = 0;
+
+    itemList.map((item) => {
+      totalItems += item.Quantity;
+    });
+
+    SetItemCount(totalItems);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+      <Nav items={itemCount} />
+      <div className="bodyCont">
+        <Routes className="routes">
+          <Route path="/" element={<HomePage />} />
+          <Route path="/shop" element={<ShopPage addItem={addItem} />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route
+            path="/checkout"
+            element={
+              <CheckoutPage
+                updateCartQuantity={updateCartQuantity}
+                itemCount={itemCount}
+              />
+            }
+          />
+          <Route path="/payment" element={<CompletedPayment />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
   );
 }
-
-export default App;

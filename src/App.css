@@ -1,38 +1,197 @@
-.App {
+@font-face {
+  font-family: "dark-souls";
+  src: url("./OptimusPrinceps.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+
+  font-family: "dark-souls";
+}
+
+:root {
+  overflow-y: overlay;
+  color-scheme: dark;
+}
+
+#app,
+.bodyCont,
+footer,
+.homePageCont,
+.homeTextCont,
+.homeText,
+.homeBrowseCont,
+.homeToShop,
+.homeText,
+.aboutPageCont,
+.aboutTextBoxCont,
+.shopPageCont,
+.itemsCont,
+.completedPaymentCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  min-width: 100vw;
+  min-height: 100vh;
+
+  justify-content: space-between;
+}
+
+.bodyCont {
+  min-height: 80vh;
+  width: 100vw;
+}
+
+.homePageCont {
+  height: 80vh;
+  background-image: url("./images/homePageSplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.homeTextCont {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 40%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.696);
+  gap: 30px;
+  border-radius: 5px;
+}
+
+.homeText {
+  color: white;
+  font-size: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homeBrowseCont {
+  border-radius: 5px;
+  height: 15%;
+  width: fit-content;
+
+  font-size: 30px;
+
+  transition: all 50ms ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.homeBrowseCont:hover {
+  filter: brightness(1.5);
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.homeBrowseCont > a {
+  color: rgb(255, 182, 23);
+  text-decoration: underline;
+}
+
+.shopPageCont {
+  background-color: rgb(40, 40, 40);
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.itemsCont {
+  width: 50%;
+  max-width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.completedPaymentCont {
+  max-width: 100%;
+  flex-wrap: wrap;
+  font-style: italic;
+  font-size: 250%;
+
+  width: 100%;
+  height: 80vh;
+
+  background-image: url("./images/aboutPageSplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.completedPaymentCont > div {
+  background-color: rgba(0, 0, 0, 0.756);
+  padding: 15px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.aboutPageCont {
+  width: 100%;
+  height: 80vh;
+
+  background-image: url("./images/aboutPageSplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.aboutTextBoxCont {
+  width: 40%;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.696);
+  font-style: italic;
+  justify-content: flex-start;
+
+  gap: 30px;
+  border-radius: 5px;
+}
+
+.aboutText {
+  width: 80%;
+  font-size: 130%;
+  padding-bottom: 30px;
   color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.merchantImg {
+  width: 80%;
+  padding-top: 30px;
+}
+footer {
+  height: 5vh;
+  min-height: 30px;
+  width: 100%;
+  color: white;
+  background-color: rgb(0, 0, 0);
+
+  flex-direction: row;
+  gap: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer > a {
+  color: white;
+  font-weight: bold;
+
+  transition: all 50ms ease-in-out;
+}
+
+footer > a:hover {
+  color: rgb(255, 200, 0);
 }
