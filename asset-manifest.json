@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.55223803.css",
-    "main.js": "/static/js/main.3204a075.js",
+    "main.js": "/static/js/main.a4a1001a.js",
     "static/media/homePageSplash.jpg": "/static/media/homePageSplash.f714765f8503c0bb236d.jpg",
     "static/media/aboutPageSplash.jpg": "/static/media/aboutPageSplash.582e3d1b007216e2d310.jpg",
     "static/media/chain_armor.png": "/static/media/chain_armor.7367910ecbc268804003.png",
@@ -36,10 +36,10 @@
     "static/media/rune_arc.png": "/static/media/rune_arc.c5fa2440d921148daed4.png",
     "index.html": "/index.html",
     "main.55223803.css.map": "/static/css/main.55223803.css.map",
-    "main.3204a075.js.map": "/static/js/main.3204a075.js.map"
+    "main.a4a1001a.js.map": "/static/js/main.a4a1001a.js.map"
   },
   "entrypoints": [
     "static/css/main.55223803.css",
-    "static/js/main.3204a075.js"
+    "static/js/main.a4a1001a.js"
   ]
 }
